@@ -1,0 +1,56 @@
+<section class="py-20 bg-white relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 right-20 w-40 h-40 buzl-bg-primary rounded-full"></div>
+    <div class="absolute bottom-20 left-20 w-40 h-40 buzl-bg-secondary rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold buzl-text-primary mb-6">
+        {{ testimonials_cards.sectionTitle.text }}
+      </h2>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        {{ testimonials_cards.sectionSubtitle.text }}
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for testimonial in testimonials_cards.testimonials.items %}
+      <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100 relative overflow-hidden">
+        <div class="absolute inset-0 buzl-bg-primary opacity-5 rounded-3xl group-hover:opacity-10 transition-opacity duration-300"></div>
+
+        <div class="relative z-10">
+          <div class="flex justify-center mb-6">
+            {% for _ in range(0, testimonial.rating) %}
+              <i class="w-5 h-5 text-yellow-400">★</i>
+            {% endfor %}
+          </div>
+
+          <blockquote class="text-gray-700 text-lg italic leading-relaxed mb-8 text-center relative">
+            <span class="text-6xl buzl-text-primary absolute -top-4 -left-2 font-serif opacity-10">"</span>
+            {{ testimonial.text }}
+            <span class="text-6xl buzl-text-primary absolute -bottom-8 -right-2 font-serif opacity-10">"</span>
+          </blockquote>
+
+          <div class="text-center">
+            <img
+              src="/placeholder.svg?height=80&width=80&query=professional headshot {{ testimonial.name }}"
+              alt="{{ testimonial.name }}"
+              class="w-16 h-16 rounded-full mx-auto mb-4 border-4 buzl-border-primary shadow-lg group-hover:scale-110 transition-transform duration-300"
+            />
+            <h4 class="font-bold buzl-text-primary text-lg mb-1">
+              {{ testimonial.name }}
+            </h4>
+            <p class="text-gray-500 text-sm">
+              {{ testimonial.position }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
