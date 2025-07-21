@@ -1,0 +1,12 @@
+{
+  "id": "home-page",
+  "name": "Home",
+  "createdAt": 1703097600000,
+  "blocks": {
+    "navigation_modern": {},
+    "header_hero": {},
+    "services_grid": {},
+    "testimonials_cards": {},
+    "footer_standard": {}
+  }
+}
