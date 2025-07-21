@@ -1,0 +1,43 @@
+<section class="py-20 bg-white relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-10 w-32 h-32 buzl-bg-primary rounded-full"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 buzl-bg-secondary rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold buzl-text-primary mb-6">
+        {{ services_grid.sectionTitle.text }}
+      </h2>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        {{ services_grid.sectionSubtitle.text }}
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for service in services_grid.services.items %}
+      <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100 relative overflow-hidden">
+        <!-- Gradient Border -->
+        <div class="absolute inset-0 buzl-bg-primary rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute inset-[2px] bg-white rounded-3xl"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center">
+          <div class="w-20 h-20 buzl-bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+            <i class="w-10 h-10 text-white drop-shadow-sm">{{ service.icon }}</i>
+          </div>
+          <h3 class="text-xl font-bold buzl-text-primary mb-4 group-hover:buzl-text-secondary transition-colors duration-300">
+            {{ service.title }}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {{ service.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
