@@ -1,0 +1,34 @@
+
+  :root {
+    --primary-color: #1e40af;
+    --secondary-color: #3b82f6;
+    --font-size-base: 16px;
+    --font-family-base: Inter, sans-serif;
+  }
+
+  html {
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+  }
+
+  /* Base Colors */
+  .buzl-text-base { font-size: var(--font-size-base); }
+  .buzl-font-base { font-family: var(--font-family-base); }
+
+  /* Text Colors */
+  .buzl-text-primary { color: var(--primary-color); }
+  .buzl-text-secondary { color: var(--secondary-color); }
+
+  /* Background Colors */
+  .buzl-bg-primary { background-color: var(--primary-color); }
+  .buzl-bg-secondary { background-color: var(--secondary-color); }
+
+  /* Border Colors */
+  .buzl-border-primary { border-color: var(--primary-color); }
+  .buzl-border-secondary { border-color: var(--secondary-color); }
+
+  /* Hover States */
+  .buzl-hover\:text-primary:hover { color: var(--primary-color); }
+  .buzl-hover\:bg-primary:hover { background-color: var(--primary-color); }
+  .buzl-hover\:bg-secondary:hover { background-color: var(--secondary-color); }
+  
